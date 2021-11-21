@@ -6,7 +6,7 @@ pipline {
     stage('Example') {
       steps {
         echo 'Hellow World'
-        sh 'echo myCustomerEnvVar = $myCustomerEnvVar'
+        
       }
     }
   }
