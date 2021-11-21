@@ -1,12 +1,10 @@
-pipline {
-  agent {
-    dockerfile true
-  }
-  stages {
-    stage('Example') {
+pipeline {
+    agent { docker { image 'maven:3.3.3' } }
+      stages {
+        stage('log version info') {
       steps {
-        echo 'Hellow World'
-        
+        sh 'mvn --version'
+        sh 'mvn clean install'
       }
     }
   }
